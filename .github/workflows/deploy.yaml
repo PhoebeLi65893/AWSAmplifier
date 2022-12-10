@@ -40,7 +40,7 @@ jobs:
         with:
             name: stack2
             template: stack2.yaml
-            #parameter-overrides: "MyParam1=myValue,MyParam2=${{ secrets.MY_SECRET_VALUE }}"
+            parameter-overrides: "capabilities=CAPABILITY_IAM"
         
       #- name: deploy
      # uses: appleboy/lambda-action@master
