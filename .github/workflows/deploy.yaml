@@ -38,8 +38,8 @@ jobs:
       - name: Deploy to AWS CloudFormation
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-            name: stack2
-            template: stack2.yaml
+            name: sam_template
+            template: sam_template.yaml
             #parameter-overrides: "capabilities=CAPABILITY_IAM"
         
       #- name: deploy
