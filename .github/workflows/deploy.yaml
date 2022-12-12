@@ -40,7 +40,7 @@ jobs:
         with:
             name: stack2
             template: stack2.yaml
-            parameter-overrides: "capabilities=CAPABILITY_IAM"
+            #parameter-overrides: "capabilities=CAPABILITY_IAM"
         
       #- name: deploy
      # uses: appleboy/lambda-action@master
