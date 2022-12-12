@@ -10,6 +10,10 @@
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        description: 'The environment of deployment'
+        required: true
+        default: 'dev'
       region:
         description: 'AWS Region to deploy to'
         required: true
