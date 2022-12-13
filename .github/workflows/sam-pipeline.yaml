@@ -1,9 +1,10 @@
 on:
+  workflow_dispatch:
   push:
     branches:
       - develop
 
-name: sam
+name: Sam
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
