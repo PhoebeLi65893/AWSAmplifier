@@ -39,12 +39,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ github.event.inputs.region}}
         
-      - name: Deploy to AWS CloudFormation
-        uses: aws-actions/aws-cloudformation-github-deploy@v1
-        with:
-            name: sam_template
-            template: sam_template.yaml
-            #parameter-overrides: "capabilities=CAPABILITY_IAM"
+      #- name: Deploy to AWS CloudFormation
+      #  uses: aws-actions/aws-cloudformation-github-deploy@v1
+      #  with:
+      #      name: sam_template
+      #      template: sam_template.yaml
+      #      #parameter-overrides: "capabilities=CAPABILITY_IAM"
             
       - name: SAM Deploy
         #if: ${{ github.event.inputs.environment == 'dev'' }}
