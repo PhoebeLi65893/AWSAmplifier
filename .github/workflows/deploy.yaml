@@ -58,13 +58,11 @@ jobs:
           #--region ${{github.event.inputs.region}} --template-file sam_template.yaml --s3-bucket va-alexa-lambda \
           #--output-template-file packaged_template.yaml > /dev/null
           # Run SAM Deploy
-          sam deploy --template-file .aws-sam/build/template.yaml \
-            --stack-name phoebedev \
-            --s3-bucket phoebedev \
-            --parameter-overrides \
-              'ParameterKey=Name,ParameterValue=example \
-              ParameterKey=Version,ParameterValue=1.0 \
-            --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM
+          sam deploy --template-file template.yaml --stack-name phoebedev --s3-bucket phoebedev --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM
+            #--parameter-overrides \
+            #  'ParameterKey=Name,ParameterValue=example \
+            #  ParameterKey=Version,ParameterValue=1.0 \
+            #--capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM
         
       #- name: deploy
      # uses: appleboy/lambda-action@master
