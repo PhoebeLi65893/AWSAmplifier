@@ -52,8 +52,8 @@ jobs:
         #  S3_BUCKET: 'va-alexa-lambda'
         run: |
           # Create S3 Bucket to store code
-          aws s3api head-bucket --bucket "${{ github.event.inputs.environment }}" 2>/dev/null \
-            || aws s3 mb s3://${{ github.event.inputs.environment }}
+          aws s3api head-bucket --bucket "phoebedev" 2>/dev/null \
+            || aws s3 mb s3://phoebedev
           #aws cloudformation package --profile ${{github.event.inputs.environment}} \
           #--region ${{github.event.inputs.region}} --template-file sam_template.yaml --s3-bucket va-alexa-lambda \
           #--output-template-file packaged_template.yaml > /dev/null
