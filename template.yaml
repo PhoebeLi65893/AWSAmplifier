@@ -83,7 +83,7 @@ Resources:
       LogGroupName: !Ref LambdaLogGroup
       FilterPattern: ""
       
-       LogGroupPermission:
+  LogGroupPermission:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunction
