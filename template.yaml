@@ -82,4 +82,11 @@ Resources:
       DestinationArn: !Join [':', [ 'arn:aws:lambda', !Ref 'AWS::Region' , !Ref 'AWS::AccountId', 'function' , !FindInMap [EnvMap, !Ref ENVIRONMENT, LoggerName] ] ]
       LogGroupName: !Ref LambdaLogGroup
       FilterPattern: ""
+      
+       LogGroupPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Join [':', [ 'arn:aws:lambda', !Ref 'AWS::Region' , !Ref 'AWS::AccountId', 'function' , !FindInMap [EnvMap, !Ref ENVIRONMENT, LoggerName] ] ]
+      Principal: logs.amazonaws.com
 
